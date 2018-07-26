@@ -7,7 +7,7 @@
   "description": "Replaces chaos with harmony.",
 	
   "icons": {
-	"48": "icons/border-48.png"
+	"48": "icon.png"
   },
 	
   "content_scripts": [
@@ -15,6 +15,13 @@
 	  "matches": ["*://*.twitch.tv/*"],
 	  "js": ["mine.js"]
 	}
-  ]
-
+  ],
+  "browser_action": {
+	"browser_style": true,
+	"default_icon": {
+		"24": "icon.png"
+	},
+	"default_title": "Twitch Analyzer",
+	"default_popup": "view.html"
+  }
 }
