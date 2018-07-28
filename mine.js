@@ -98,20 +98,17 @@ function ngrams(n, words, maxPerMessage) {
 			}
 		}
 	});
-	for (word1 in gram1) {
-		var elongations = new Array();
-		for (word2 in gram1) {
+	for (word1 in grams) {
+		// var elongations = new Array();
+		for (word2 in grams) {
 			if (word1 !== word2 && isElongated(word1, word2)) {
-				elongations.push(word2);
-			}
-		}
-		var max = word1;
-		for (var i = 0; i < elongations.length; i++) {
-			if (grams[elongations[i]] > grams[max]) {
-				grams[max] = 0;
-				max = grams[elongations[i]];
-			} else {
-				grams[elongations[i]] = 0;
+				if (grams[word1] < grams[word2]) {
+					grams[word2] += grams[word1];
+					grams[word1] = 0;
+				} else {
+					grams[word1] += grams[word2]
+					grams[word2] = 0;
+				}
 			}
 		}
 	}
