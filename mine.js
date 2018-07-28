@@ -45,6 +45,10 @@ setInterval(function() {
 	console.log("Total words: " + length);
 	
 }, 3000);
+
+
+
+
 // given an object "list" with attributes: list["attribute"] = number
 // this will return n attributes with the highest 'number' in order in an array
 function getNPopular(n, list) {
@@ -74,7 +78,7 @@ function getNPopular(n, list) {
 function ngrams(n, words, maxPerMessage) {
 	var grams = {};
 	Array.prototype.forEach.call(words, function(line) {
-		wordsList = line.split(" ");
+		wordsList = line.toLowerCase().split(" ");
 		if (wordsList.length < n) {
 			return;
 		}
@@ -94,6 +98,23 @@ function ngrams(n, words, maxPerMessage) {
 			}
 		}
 	});
+	for (word1 in gram1) {
+		var elongations = new Array();
+		for (word2 in gram1) {
+			if (word1 !== word2 && isElongated(word1, word2)) {
+				elongations.push(word2);
+			}
+		}
+		var max = word1;
+		for (var i = 0; i < elongations.length; i++) {
+			if (grams[elongations[i]] > grams[max]) {
+				grams[max] = 0;
+				max = grams[elongations[i]];
+			} else {
+				grams[elongations[i]] = 0;
+			}
+		}
+	}
 	return grams;
 }
 function addItem(item, list) {
