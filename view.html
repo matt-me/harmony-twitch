@@ -1,32 +1,13 @@
+<!doctype html>
 <html>
-	<head>
-		<link rel="stylesheet" href="style.css">
-	</head>
-	<body>
-	Options:
-	<div>
-		Update interval (how often the chat is read)
-		<select>
-			  <option value="1">1 second</option>
-			  <option value="5">5 seconds</option>
-			  <option value="15">15 seconds</option>
-		</select>
-	</div>
-	<div>
-		How many recent messages should be analyzed?
-		<input type="number" min="1" max="500" value="200" default="200"/>
-	</div>
-	<!--div>
-		Consolidate word elongations
-		<input type="checkbox" checked/>
-	</div-->
-	<div>
-		<form action="editList.html" target="_blank">
-			<button type="submit">Open list of ignored words</button>
-		</form>
-	</div>
-	<div>
-		<button type="button">Save changes</button> 
-	</div>
-	</body>
+    <head>  
+    </head>
+    <body>
+        <canvas id="my_canvas" width="200" height="100">
+        </canvas>
+        <meta charset="UTF-8">
+        <script type="text/javascript" src="lib/wordcloud2.js/src/wordcloud2.js"></script>
+        <script type="text/javascript" src="mine.js"></script>
+        <script type="text/javascript">document.write("hello world");</script>
+    </body>
 </html>
