@@ -3,7 +3,9 @@
   "manifest_version": 2,
   "name": "TwitchFox",
   "version": "1.0",
-
+	"permissions": [
+    "activeTab"
+  ],
   "description": "Replaces chaos with harmony.",
 	
   "icons": {
@@ -23,5 +25,5 @@
 	},
 	"default_title": "Twitch Analyzer",
 	"default_popup": "view.html"
-  }
+	}
 }
