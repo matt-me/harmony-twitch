@@ -90,4 +90,3 @@ function isElongated(word1, word2) {
   }
   return word1 === word2;
 }
-browser.tabs.executeScript({file: "/script_content/makecloud.js"})
