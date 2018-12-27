@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="lib\wordcloud2.js\src\wordcloud2.js"></script>
+</head>
+
+<body>
+    <canvas id="my_canvas" width="200" height="200">
+    </canvas>
+    <meta charset="UTF-8">
+    <script>
+        var list = [
+            ["hello", 5],
+            ["world", 2],
+            ["I", 10],
+            ["am", 3],
+            ["a", 6],
+            ["computer", 1]
+        ]
+        setInterval(function () {
+            WordCloud(document.getElementById('my_canvas'), {
+                list: list,
+                gridSize: 16,
+                weightFactor: 16,
+                origin: [90, 0],
+                fontFamily: 'Times, serif',
+                color: 'random-light',
+                backgroundColor: '#000',
+                shuffle: false,
+                rotateRatio: 0
+            });
+        }, 3000);
+    </script>
+</body>
+
+</html>

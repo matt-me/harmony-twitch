@@ -1,23 +1,21 @@
 {
-
   "manifest_version": 2,
   "name": "TwitchFox",
   "version": "1.0",
 	"permissions": [
-    "activeTab"
+		"activeTab",
+		"tabs"
   ],
   "description": "Replaces chaos with harmony.",
 	
   "icons": {
 	"48": "icon.png"
   },
-	
-  "content_scripts": [
-	{
-	  "matches": ["*://*.twitch.tv/*"],
-	  "js": ["mine.js"]
-	}
-  ],
+	"background": {
+    "scripts": [
+			"background.js"
+    ]
+},
   "browser_action": {
 	"browser_style": true,
 	"default_icon": {
